@@ -1,0 +1,42 @@
+:root {
+    --color-white:white;
+    --color-gray: #f0f2f5;
+    --color-gray2: #dddfe2;
+    --color-dark:#1d2129;
+    --color-blue:#1b74e4;
+    --color-green:#42b72a;
+    --color-blue2:#166fe5;
+    --color-green2:#36a420;
+    --color-azul-claro:#e0f2f1;
+    --color-azul-azul:#2196f3;
+ }
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0f2f1; /* Azul claro */
+}
+
+.button-container {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2196f3; /* Azul */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+a {
+text-decoration: none;
+color:white;
+}
