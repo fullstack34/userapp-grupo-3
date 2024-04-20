@@ -1,0 +1,72 @@
+:root {
+    --color-white:white;
+    --color-gray: #f0f2f5;
+    --color-gray2: #dddfe2;
+    --color-dark:#1d2129;
+    --color-blue:#1b74e4;
+    --color-green:#42b72a;
+    --color-blue2:#166fe5;
+    --color-green2:#36a420;
+    --color-azul-claro:#e0f2f1;
+    --color-azul-azul:#2196f3;
+}
+
+* {
+    background-color: var(--color-azul-claro);
+}
+h1 {
+    text-align: center;
+}
+
+.Formulario {
+    border: 1px solid #000;
+    width: 500px;
+    margin: auto;
+    box-sizing: border-box;
+    background-color: var(--color-gray);
+}
+
+.Formulario Label{
+    display: block;
+    font-size: 17px;
+    padding: 8px;
+    margin-top: 3px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: var(--color-gray);
+    color: var(--color-dark);
+}
+
+.Formulario input {
+    display: block;
+    margin: auto;
+    background-color: var(--color-gray);
+}
+
+.Formulario button {
+display: block;
+margin: auto;
+background-color: var(--color-azul-azul);
+border: none;
+color: var(--color-white);
+padding: 15px 32px;
+text-align: center;
+font-size: 15px;
+cursor: pointer;
+border-radius: 8px;
+transition: background-color 0.5s ease;
+}
+
+.Formulario button:hover {
+    background-color: var(--color-blue2);
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin: auto;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 5px;
+}
