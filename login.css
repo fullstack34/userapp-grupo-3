@@ -1,19 +1,26 @@
 :root {
-    --color-white:white;
-    --color-gray: #f0f2f5;
-    --color-gray2: #dddfe2;
-    --color-dark:#1d2129;
-    --color-blue:#1b74e4;
-    --color-green:#42b72a;
-    --color-blue2:#166fe5;
-    --color-green2:#36a420;
-    --color-azul-claro:#e0f2f1;
-    --color-azul-azul:#2196f3;
-
+    --cor-0: #ffffff;
+    --cor-1: #f7f7f7;
+    --cor-2: #ededed;
+    --cor-3: #dedede;
+    --cor-4: #cccccc;
+    --cor-5: #b2b2b2;
+    --cor-6: #9c9c9c;
+    --cor-7: #717171;
+    --cor-8: #595959;
+    --cor-9: #404040;
+    --cor-10: #2e2e2e;
+    --cor-11: #111111;
+    --cor-12: #000000;
+    --cor-p1: #ffbb00;
+    --cor-p2: #e4a30b;
+    --cor-p3: #a66f00;
+    --cor-p4: #664400;
+    --cor-p5: #332200;
 }
 body {
    font-family: Arial, Helvetica, sans-serif;
-   background-color: var(--color-azul-claro);
+   background-color: #111111;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -30,7 +37,7 @@ body {
 }
 
 .content-login-box{
-   background-color: var(--color-white);
+   background-color: #404040;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -63,29 +70,29 @@ body {
        cursor: pointer;
    }
    .btn-enter {
-       background-color: var(--color-azul-azul);
+       background-color: #2e2e2e;
    }
 
    .btn-enter:hover{
-       background-color: var(--color-blue2);
+       background-color: #e4a30b;
 
    }
 
    .btn-create-account{
-       background-color: var(--color-azul-azul);
-       width: auto;
+       background-color: #f7f7f7;
+       width:auto;
    }
-
    .btn-create-account:hover {
-       background-color:var(--color-green2);
+       background-color:#e4a30b
        }
 
        a {
         text-decoration: none;
+        color: #f7f7f7;
        }
 
        .create-account {
-        color: #dddfe2;
+        color: #2e2e2e;
        }
 
        .home {
