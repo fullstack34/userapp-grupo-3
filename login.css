@@ -17,84 +17,137 @@
     --cor-p3: #a66f00;
     --cor-p4: #664400;
     --cor-p5: #332200;
+    --primary-color: #fd951f;
+    --bg-color: #130f0d;
+    --text-color: #f0f0f5;
+    --light-color: rgba(255, 255, 255, 0.04);
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Roboto", sans-serif;
+    height: 100%;
+}
+
 body {
-   font-family: Arial, Helvetica, sans-serif;
-   background-color: #111111;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   height: 90vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-11);
+    color: var(--text-color);
 }
 
-
-.content-login {
-   width: 350px;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 1rem;
+form {
+    background-color: #404040;
+    width: 100%;
+    max-width: 500px;
+    padding: 32px 64px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.content-login-box{
-   background-color: #404040;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 1rem;
-   padding: 1rem;
-   width: 100%;
-   border-radius: 8px;
-   box-shadow: rgb(0 0 0 / 10%) 0px 2px 4px, rgb(0 0 0 / 10%) 0px 8px 16px;
+form h2 {
+    margin-bottom: 32px;
 }
 
-.inputs {
-   padding: 15px;
-   height: 22px;
-   border-radius: 6px;
-   border: 1px solid var(--color-gray2);
-   outline: none;
-   width: 90%;
-   font-size: 17px;
-   color:var(--color-dark)
-   }
+div.input {
+    margin-bottom: 24px;
+    position: relative;
+}
 
-   .btn{
-       padding: 15px;
-       border: none;
-       color: var(--color-white);
-       border-radius: 5px;
-       width: 100%;
-       font-size: 1.1rem;
-       transition: .2s;
-       cursor: pointer;
-   }
-   .btn-enter {
-       background-color: #2e2e2e;
-   }
+input,
+button {
+    appearance: none;
+    width: 100%;
+    padding: 16px 0;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    background-color: transparent;
+    outline: none;
+    color: var(--text-color);
+    font-size: 1em;
+}
 
-   .btn-enter:hover{
-       background-color: #e4a30b;
+.btn {
+    padding: 15px;
+    border: none;
+    color: var(--color-white);
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1.1rem;
+    transition: .2s;
+    cursor: pointer;
+}
 
-   }
+.btn-enter {
+    background-color: #2e2e2e;
+    margin-bottom: 16px; /* Adiciona espaço abaixo do botão Entrar */
+}
 
-   .btn-create-account{
-       background-color: #f7f7f7;
-       width:auto;
-   }
-   .btn-create-account:hover {
-       background-color:#e4a30b
-       }
+.btn-enter:hover {
+    background-color: #e4a30b;
+}
 
-       a {
-        text-decoration: none;
-        color: #f7f7f7;
-       }
+.forgot-password {
+    display: block;
+    text-align: center;
+    margin-bottom: 24px; /* Adiciona espaço abaixo do link Esqueceu a senha */
+    color: #f7f7f7;
+    text-decoration: none;
+}
 
-       .create-account {
-        color: #2e2e2e;
-       }
+.btn-create-account {
+    background-color: #f7f7f7;
+    width: auto;
+}
 
-       .home {
-        color:#dddfe2;
-       }
+.btn-create-account:hover {
+    background-color: #e4a30b;
+}
+
+a {
+    text-decoration: none;
+    color: #f7f7f7;
+}
+
+.create-account {
+    color: #2e2e2e;
+}
+
+.home {
+    color: #dddfe2;
+}
+
+input ~ label {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    color: rgba(255, 255, 255, 0.6);
+    transition: 0.4s;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    transform: translateY(-24px);
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+}
+
+.input span.error {
+    display: flex;
+    padding: 0;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.input span.error.active {
+    border: 1px solid red;
+    padding: 0.4em;
+}
