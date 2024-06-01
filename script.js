@@ -6,10 +6,9 @@ function ValidateField(field) {
         let foundError = false;
 
         for (let error in field.validity) {
-            // Se não for customError
-            // então verifica se tem erro
             if (field.validity[error] && !field.validity.valid) {
                 foundError = error;
+                break;
             }
         }
         return foundError;
@@ -17,6 +16,9 @@ function ValidateField(field) {
 
     function customMessage(typeError) {
         const messages = {
+            text: {
+                valueMissing: "Por favor, preencha este campo",
+            },
             email: {
                 valueMissing: "Email é obrigatório",
                 typeMismatch: "Por favor, preencha um email válido",
@@ -24,9 +26,12 @@ function ValidateField(field) {
             senha: {
                 valueMissing: "Por favor, preencha este campo",
             },
+            default: {
+                valueMissing: "Por favor, preencha este campo",
+            },
         };
 
-        return messages[field.type][typeError];
+        return (messages[field.type] && messages[field.type][typeError]) ? messages[field.type][typeError] : messages.default[typeError];
     }
 
     function setCustomMessage(message) {
@@ -46,7 +51,6 @@ function ValidateField(field) {
 
         if (error) {
             const message = customMessage(error);
-
             field.style.borderColor = "red";
             setCustomMessage(message);
         } else {
@@ -62,11 +66,9 @@ function customValidation(event) {
     validation();
 }
 
-for (field of fields) {
+for (const field of fields) {
     field.addEventListener("invalid", (event) => {
-        // Eliminar o bubble
         event.preventDefault();
-
         customValidation(event);
     });
     field.addEventListener("blur", customValidation);
@@ -80,7 +82,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
         const validation = ValidateField(field);
         validation();
 
-        if (field.validity.valid === false) {
+        if (!field.validity.valid) {
             isValid = false;
         }
     });
