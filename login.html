@@ -2,38 +2,39 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-
-  <link rel="stylesheet" href="login.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap">
-
-  <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap">
+    <script src="js/auth.js" defer></script> <!-- Inclui o script de autenticação -->
+    <script src="login.js" defer></script>
 </head>
 
 <body>
-
   <form action="">
 
     <div class="input">
-      <input required type="email" />
-      <label>Email ou Telefone</label>
-      <span class="error"></span>
+        <input id="emailOrPhone" required type="email" />
+        <label>Email ou Telefone</label>
+        <span class="error"></span>
     </div>
-
 
     <div class="input">
-      <input required type="password" />
-      <label>Senha</label>
-      <span class="error"></span>
+        <input id="senha" required type="password" />
+        <label>Senha</label>
+        <span class="error"></span>
     </div>
 
-    <button class="btn btn-enter"><a class="home" href="https://fullstack34.github.io/userapp-grupo-3/dashboard.html">Entrar</a></button>
-    <a href="https://fullstack34.github.io/userapp-grupo-3/forgot-password.html" class="forgot-password">Esqueceu a senha?</a>
+    <button class="btn btn-enter">Entrar</button>
+    <a href="forgot-password.html" class="forgot-password">Esqueceu a senha?</a>
    
-    <button class="btn btn-create-account"><a class="create-account" href="https://fullstack34.github.io/userapp-grupo-3/create-account.html">Criar nova conta</a></button>
-  </form>
+    <button class="btn btn-create-account"><a href="create-account.html">Criar nova conta</a></button>
+    
+    <!-- Span para exibir mensagem de erro -->
+    <span class="error-message"></span>
+</form>
+
 </body>
 
 </html>

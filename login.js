@@ -75,22 +75,31 @@ for (const field of fields) {
 }
 
 document.querySelector("form").addEventListener("submit", (event) => {
-    const formFields = document.querySelectorAll("[required]");
-    let isValid = true;
+    event.preventDefault(); // Evita o envio real do formulário para fins de teste
 
-    formFields.forEach((field) => {
-        const validation = ValidateField(field);
-        validation();
+    const emailOrPhone = document.getElementById("emailOrPhone").value;
+    const senha = document.getElementById("senha").value;
 
-        if (!field.validity.valid) {
-            isValid = false;
-        }
-    });
+    // Obter dados salvos no localStorage
+    const storedData = JSON.parse(localStorage.getItem("userData"));
 
-    if (!isValid) {
-        event.preventDefault();
-        console.log("Formulário inválido. Corrija os erros antes de enviar.");
+    if (storedData && storedData.email === emailOrPhone && storedData.senha === senha) {
+        console.log("Login bem-sucedido! Redirecionando para o Dashboard...");
+        
+        // Define a chave "logged-in" como true no localStorage
+        localStorage.setItem("logged-in", "true");
+
+        // Redireciona para o dashboard
+        window.location.href = "dashboard/dashboard.html";
     } else {
-        console.log("Enviar o formulário");
+        console.log("Email/telefone ou senha incorretos. Por favor, tente novamente.");
+        // Exibir mensagem de erro na tela
+        const errorSpan = document.querySelector(".error-message");
+        errorSpan.textContent = "Email ou senha inválidos.";
+        errorSpan.classList.add("active");
+
+        // Limpar campos de entrada
+        document.getElementById("emailOrPhone").value = "";
+        document.getElementById("senha").value = "";
     }
 });
