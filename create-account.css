@@ -44,7 +44,7 @@ body {
 }
 
 form {
-    background-color: #404040;
+    background-color: var(--cor-9);
     width: 100%;
     max-width: 500px;
     padding: 32px 64px;
@@ -79,34 +79,38 @@ button {
 .btn {
     padding: 15px;
     border: none;
-    color: var(--color-white);
+    color: var(--cor-0);
     border-radius: 5px;
     width: 100%;
     font-size: 1.1rem;
-    transition: .2s;
+    transition: 0.2s;
     cursor: pointer;
 }
 
-.btn-send {
-    background-color: var(--cor-p1);
+.btn-enter {
+    background-color: var(--cor-2);
     margin-bottom: 16px;
 }
 
-.btn-send:hover {
+.btn-enter:hover {
     background-color: var(--cor-p2);
 }
 
 .forgot-password {
     display: block;
     text-align: center;
-    margin-bottom: 24px; /* Adiciona espaço abaixo do link Esqueceu a senha */
-    color: #f7f7f7;
+    margin-bottom: 24px;
+    color: var(--cor-1);
     text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: var(--cor-p2);
 }
 
 a {
     text-decoration: none;
-    color: #f7f7f7;
+    color: var(--cor-1);
 }
 
 input ~ label {
@@ -125,12 +129,9 @@ input:valid ~ label {
 }
 
 .input span.error {
-    display: flex;
-    padding: 0;
-    background-color: rgba(255, 0, 0, 0.2);
+    display: block;
+    color: red;
+    margin-top: 8px;
+    font-size: 0.9em;
 }
 
-.input span.error.active {
-    border: 1px solid red;
-    padding: 0.4em;
-}

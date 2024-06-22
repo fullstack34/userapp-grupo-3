@@ -1,26 +1,42 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="style-create-account.css">
+    <link rel="stylesheet" href="create-account.css">
+    <title>Cadastro de Conta</title>
 </head>
 <body>
-    <h1>Cadastre-se</h1>
-    <form class="Formulario" method="post" action="">
-        <label for="name">Nome</label>
-        <input type="text" name="" id="name" required>
-        <label for="lastname">Sobrenome</label>
-        <input type="text" name="" id="lastname" required>
-        <label for="email">E-mail</label>
-        <input type="email" id="email" required>
-        <label for="password">Senha</label>
-        <input type="password" name="" id="password" required>
-        <label for="confirmpassword">Confirmar senha</label>
-        <input type="password" id="confirmpassword" required><br>
-        <button type="submit">Cadastrar</button> <br>
+    <form id="createAccountForm" method="POST">
+        <h2>Criar Conta</h2>
+        <div class="input">
+            <input type="text" id="nome" name="nome" required>
+            <label for="nome">Nome</label>
+            <span class="error" id="nome-error"></span>
+        </div>
+        <div class="input">
+            <input type="text" id="sobrenome" name="sobrenome" required>
+            <label for="sobrenome">Sobrenome</label>
+            <span class="error" id="sobrenome-error"></span>
+        </div>
+        <div class="input">
+            <input type="email" id="email" name="email" required>
+            <label for="email">E-mail</label>
+            <span class="error" id="email-error"></span>
+        </div>
+        <div class="input">
+            <input type="password" id="senha" name="senha" required>
+            <label for="senha">Senha</label>
+            <span class="error" id="senha-error"></span>
+        </div>
+        <div class="input">
+            <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+            <label for="confirmar_senha">Confirmar Senha</label>
+            <span class="error" id="confirmar_senha-error"></span>
+        </div>
+        <button type="submit" class="btn btn-enter">Cadastrar</button>
+        <a href="/login.html" class="forgot-password">Já tem uma conta? Faça login</a>
     </form>
-<a href="https://fullstack34.github.io/userapp-grupo-3/login.html">Faça login</a>
+    <script src="create-account.js"></script>
 </body>
 </html>
