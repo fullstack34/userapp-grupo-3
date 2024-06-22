@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("userData", JSON.stringify(user));
 
         // Redireciona para a página de login
-        window.location.href = "/login.html";
+        window.location.href = "https://fullstack34.github.io/userapp-grupo-3/login.html";
+
     });
 });

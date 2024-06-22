@@ -90,7 +90,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
         localStorage.setItem("logged-in", "true");
 
         // Redireciona para o dashboard
-        window.location.href = "dashboard/dashboard.html";
+        window.location.href = "https://fullstack34.github.io/userapp-grupo-3/dashboard/dashboard.html";
     } else {
         console.log("Email/telefone ou senha incorretos. Por favor, tente novamente.");
         // Exibir mensagem de erro na tela

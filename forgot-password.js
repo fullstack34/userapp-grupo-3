@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Um email de recuperação foi enviado para o seu endereço.");
 
             // Redirecionar para a página de login após a simulação
-            window.location.href = "login.html";
+            window.location.href = "https://fullstack34.github.io/userapp-grupo-3/login.html";
         } else {
             console.log("Email não encontrado ou inválido.");
             const errorSpan = document.querySelector("#email + span.error");
